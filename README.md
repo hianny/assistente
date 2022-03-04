@@ -1,1 +1,2 @@
 # assistente
+ainda não fiz
