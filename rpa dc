@@ -1,0 +1,25 @@
+import pyautogui
+from selenium import webdriver
+import time
+
+chr = webdriver.Chrome() 
+
+zap2 = 'https://discord.com/login'
+zap= 'https://accounts.google.com/v3/signin/identifier?dsh=S870780%3A1674152493808086&hl=pt-br&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWnogHfgPDGge5oHzEN5riJInmeS74Z_BoWEUiNigf8ew0-lrx4gOXLhd1ow2EKFbs_Jv14rX_VN9g'
+chr.get(zap2)
+time.sleep(5)
+pyautogui.write('dianaurt318@gmail.com')
+time.sleep(1)
+pyautogui.press('tab')
+pyautogui.write('erza872237')
+pyautogui.press('enter')
+time.sleep(5)
+chr.find_element('xpath','//*[@id="app-mount"]/div[2]/div/div[1]/div/div[2]/div/div[1]/div/div/div/nav/div[1]/button').click()
+pyautogui.write('mimi')
+pyautogui.press('enter')
+chr.find_element('xpath','//*[@id="app-mount"]/div[2]/div/div[1]/div/div[2]/div/div[1]/div/div/div[2]/div[2]/main/form/div/div[1]/div/div[3]/div/div[2]').click()
+pyautogui.write('@nck')
+pyautogui.press('enter')
+pyautogui.write('oh nicooole volta desgramada volta nicole que eu perdoo a facada')
+pyautogui.press('enter')
+time.sleep(5)
