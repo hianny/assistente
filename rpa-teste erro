@@ -1,0 +1,48 @@
+import pyautogui
+from selenium import webdriver
+import time
+
+
+print('escreva o email para quem vc quer falar mandar')
+
+email = str(input("escreva aqui: ")) 
+time.sleep(1)
+print('escreva o assunto do email')
+
+assunto = str(input('escreva aqui:'))
+time.sleep(1)
+print('escreva o texto')
+
+print('digite o texto')
+texto =str(input('escreva aqui:'))
+time.sleep(1)
+
+if (texto == "" and assunto =="" and email =="" ):
+    chr.implicitly_wait(30)
+else:
+    gmail = "https://mail.google.com/mail/u/0/#inbox"
+    chrome = 'https://accounts.google.com/v3/signin/identifier?dsh=S855836531%3A1674222139782321&continue=https%3A%2F%2Fmyaccount.google.com%2Fintro%2Fdata-and-privacy%3Fhl%3Dpt-BR&ec=GAZAwAE&followup=https%3A%2F%2Fmyaccount.google.com%2Fintro%2Fdata-and-privacy%3Fhl%3Dpt-BR&hl=pt-BR&osid=1&passive=1209600&service=accountsettings&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWnogHf1KHCBthTatCn8juZS0Vr8obu2MGdhHTTe4Xsv8s4o9_bga_QgjFpZEFdoDhNOv64jN8QKIA'
+    chr = webdriver.Chrome()
+    chr.get(chrome)
+    chr.find_element('xpath','//*[@id="identifierId"]').click()
+    pyautogui.write('hianny.urt@mt.estudante.senai.br')
+    pyautogui.press('enter')
+    time.sleep(5)
+    chr.find_element('xpath','//*[@id="password"]/div[1]/div/div[1]/input').click()
+    pyautogui.write('872237ERZA')
+    pyautogui.press('enter')
+    time.sleep(5)
+    chr.execute_script("window.open('');")
+    chr.switch_to.window(chr.window_handles[1])
+    chr.get(gmail)
+    time.sleep(5)
+    chr.find_element('xpath','/html/body/div[16]/div[2]/div[3]/button[1]').click()
+    time.sleep(5)
+    chr.find_element('xpath','/html/body/div[7]/div[3]/div/div[2]/div[2]/div[1]/div[1]/div/div').click()
+    time.sleep(5)
+    pyautogui.write(email)
+    pyautogui.press('tab')
+    pyautogui.write(assunto)
+    pyautogui.press('tab')
+    pyautogui.write(texto)
+    chr.find_element('xpath','//*[@id=":1cf"]').click()
